@@ -1,0 +1,29 @@
+
+<div class="container">
+        <h1>{{ titlePage }}</h1>
+        <div class="row">
+         <div class="col-6" *ngFor="let album of batteris">
+            <div class="card my-3" >
+                        
+                    
+                            <div class="card-header">
+                              <!-- permet d'afficher l'index -->
+                    
+                              <span style="color:blueviolet">{{ album.name}}  </span>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"><a class="active" routerLink="/album/{{album.id}}">{{album.title}}</a></h5>
+                              <p class="card-text">Ref : {{album.id}}</p>
+                              <p class="card-text">Capacite : {{album.capacite}}</p>
+                              <p class="card-text">Tension : {{album.tension}}</p>
+                              <p class="card-text"><span style="color:rgb(226, 43, 98); font-weight: bold" >Prix : {{album.price}} €</span></p>
+                              
+                              <p class="card-text">{{album.description | slice:0:29 }}...</p>
+                        
+                       
+                                <a class="btn btn-success btn-lg"  routerLink="/battery/{{album.id}}" role="button">Details</a>
+                            </div>
+                    </div>
+            </div>
+        </div>
+</div>

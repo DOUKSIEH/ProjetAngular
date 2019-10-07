@@ -1,0 +1,26 @@
+<div class="jumbotron mx-5 my-5">
+        <div class="container ">
+            <h2>Connectez vous !!!!</h2>
+           
+                   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                     <div class="form-group">
+                       <label for="email">Adresse mail</label>
+                       <input type="text"
+                              id="email"
+                              class="form-control"
+                              formControlName="email">
+                     </div>
+                     <div class="form-group">
+                       <label for="password">Mot de passe</label>
+                       <input type="password"  id="password"  class="form-control" formControlName="password">
+                     </div>
+                     <button class="btn btn-success"
+                             type="submit"
+                             [disabled]="loginForm.invalid">Se connecter</button>
+                   </form>
+                   <p class="text-danger">{{ errorMessage }}</p>
+           
+         
+ 
+        </div>
+</div>
