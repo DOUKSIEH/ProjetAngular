@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Battery } from '../battery';
+
 import * as firebase from 'firebase';
+import { Batt } from '../models/battery.model';
 
 
 @Injectable({
@@ -9,32 +10,32 @@ import * as firebase from 'firebase';
 })
 export class BatterieService {
 
-    batteris: Battery[] = [];
-   batsSubject = new Subject<Battery[]>();
+    batteris: Batt[] = [];
+   batsSubject = new Subject<Batt[]>();
   
     constructor() {
-      this.getBooks();
+      this.getBats();
   }
-    emitBooks() {
+    emitBats() {
       this.batsSubject.next(this.batteris);
     }
    //
-    saveBooks() {
-      firebase.database().ref('/books').set(this.batteris);
+    saveBats() {
+      firebase.database().ref('/admin').set(this.batteris);
     }
-    getBooks() {
-      firebase.database().ref('/books')
+    getBats() {
+      firebase.database().ref('/admin')
         .on('value', (data: firebase.database.DataSnapshot) => {
             this.batteris = data.val() ? data.val() : [];
-            this.emitBooks();
+            this.emitBats();
           }
         );
     }
   
-    getSingleBook(id: number) {
+    getSingleBat(id: number) {
       return new Promise(
         (resolve, reject) => {
-          firebase.database().ref('/books/' + id).once('value').then(
+          firebase.database().ref('/admin/' + id).once('value').then(
             (data: firebase.database.DataSnapshot) => {
               resolve(data.val());
             }, (error) => {
@@ -45,22 +46,22 @@ export class BatterieService {
       );
     }
 
-    createNewBook(newBook: Battery) {
-      this.batteris.push(newBook);
-      this.saveBooks();
-      this.emitBooks();
+    createNewBat(newBat: Batt) {
+      this.batteris.push(newBat);
+      this.saveBats();
+      this.emitBats();
     }
   
-    removeBat(battery: Battery) {
-      const bookIndexToRemove = this.batteris.findIndex(
+    removeBat(bat: Batt) {
+      const batIndexToRemove = this.batteris.findIndex(
         (battEl) => {
-          if(battEl === battery) {
+          if(battEl === bat) {
             return true;
           }
         }
       );
-      this.batteris.splice(bookIndexToRemove, 1);
-      this.saveBooks();
-      this.emitBooks();
+      this.batteris.splice(batIndexToRemove, 1);
+      this.saveBats();
+      this.emitBats();
     }
   }

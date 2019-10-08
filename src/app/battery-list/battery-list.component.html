@@ -1,20 +1,47 @@
-<div class="row">
-        <div class="col-xs-12">
-          <h2>Vos livres</h2>
-          <div class="list-group">
-            <button
-              class="list-group-item"
-              *ngFor="let bat of batteris; let i = index"
-              (click)="onViewBat(i)">
-              <h3 class="list-group-item-heading">
-                {{ bat.name }}
-                <button class="btn btn-default pull-right" (click)="onDeleteBat(bat)">
-                  <span class="glyphicon glyphicon-minus"></span>
-                </button>
-              </h3>
-              <p class="list-group-item-text">{{ book.author }}</p>
-            </button>
-          </div>
-          <button class="btn btn-primary" (click)="onNewBat()">Nouveau livre</button>
-        </div>
+
+    <div class="container">
+        <div class="jumbotron mx-4 mt-5">
+            <h2>Nos Batteries </h2>
+            
+            <div class="row" >
+                    <div class="col-4" *ngFor="let bat of batteris; let i = index">             
+                     
+                            <div class="card my-2" >
+                                    <button  class="btn btn-default"  (click)="onViewBat(i)">         
+                                    <div class="card-header">
+                                      <!-- permet d'afficher l'index -->
+                            
+                                      <span style="color:blueviolet">{{ bat.name}}  </span>
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{bat.name}}</h5>
+                                      <p class="card-text">Capacite : {{bat.capacite}}</p>
+                                      <p class="card-text">Tension : {{bat.tension}}</p>
+                                       <p class="card-text">Dimension : {{bat.dimension}}</p>
+                                      <p class="card-text"><span style="color:rgb(226, 43, 98); font-weight: bold" >Prix : {{bat.price}} €</span></p>
+                                      
+                                      <p class="card-text">Description: {{bat.description | slice:0:29 }}...</p>
+                                
+                                      
+                                    </div>
+                                </button>
+                                <button class="btn btn-danger mx-5 my-3" (click)="onDeleteBat(bat)">Delete</button>
+                                <button class="btn btn-info mx-5 my-3" >Editer</button>
+           
+                            </div>
+                       
+                    </div>    
+                       
+            </div>
+            <button class="btn btn-primary mb-3" (click)="onNewBat()">Nouvelle Batterie</button>
+     
+                 
+    </div>
+            
+    
 </div>
+
+
+
+
+

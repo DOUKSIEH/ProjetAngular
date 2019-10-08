@@ -1,8 +1,6 @@
 <div class="container-fuild principal">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" routerLink="/">Bienvenue</a>
-          
-          
+        <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+            
             <div class="collapse navbar-collapse "  id="navbarColor02">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
@@ -20,7 +18,7 @@
                       <a class="nav-link" routerLink="/login" *ngIf="!isAuth">Se connecter</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link"  routerLink="/login" (click)="onSignOut()"
+                      <a class="nav-link"  (click)="onSignOut()"
                          style="cursor:pointer"
                          *ngIf="isAuth">Déconnexion</a>
                     </li>

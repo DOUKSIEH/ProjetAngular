@@ -14,36 +14,38 @@ import { HeaderComponent } from './header/header.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { BatteryListComponent } from './battery-list/battery-list.component';
+import { BatterySingleComponent } from './battery-single/battery-single.component';
+import { BatteryFormComponent } from './battery-form/battery-form.component';
 
-const albumsRoutes: Routes = [
-  {
-  path: 'batteries',
-  component: BatteriesComponent
-  },
-  {
-  path: '',
-  redirectTo: '/batteries',
-  pathMatch: 'full'
-  },
-  {
-  path: 'login',
-  component: LoginComponent
-  },
-  {
-  path: 'signup',
-  component: SignupComponent
-  }
-  ,
-  {
-  path: 'battery/:id',
-  component: BatteryDetailsComponent
-  },
-  //{
-  // path: 'paginate',
-  // component: PaginateComponent
-  // }
+// const BatRoutes: Routes = [
+//   {
+//   path: 'batteries',
+//   component: BatteriesComponent
+//   },
+//   {
+//   path: '',
+//   redirectTo: '/batteries',
+//   pathMatch: 'full'
+//   },
+//   {
+//   path: 'login',
+//   component: LoginComponent
+//   },
+//   {
+//   path: 'signup',
+//   component: SignupComponent
+//   }
+//   ,
+//   {
+//   path: 'battery/:id',
+//   component: BatteryDetailsComponent
+//   },
+//   //{
+//   // path: 'paginate',
+//   // component: PaginateComponent
+//   // }
 
-  ];
+//   ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +55,8 @@ const albumsRoutes: Routes = [
     SignupComponent,
     HeaderComponent,
     BatteryListComponent,
+    BatterySingleComponent,
+    BatteryFormComponent,
     
     
   ],
@@ -61,7 +65,7 @@ const albumsRoutes: Routes = [
     AppRoutingModule,
     FormsModule, // importez le module
     ReactiveFormsModule,
-    RouterModule.forRoot(albumsRoutes), // chargement des routes dans l'application
+    //RouterModule.forRoot(BatRoutes), // chargement des routes dans l'application
   ],
   providers:  [AuthService, AuthGuardService],
   bootstrap: [AppComponent]

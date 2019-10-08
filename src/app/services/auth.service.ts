@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  
 
-  constructor() { }
+  constructor(private router: Router) { }
 
     createNewUser(email: string, password: string) {
       return new Promise(
@@ -37,6 +39,23 @@ export class AuthService {
       );
   }
   signOutUser() {
-    firebase.auth().signOut();
-  }
+    return new Promise(
+        (resolve, reject) => {
+      firebase.auth().signOut().then(
+        () => {
+          console.log("ca passe")
+          this.router.navigate(['/batteries']);
+        },
+        (error) => {
+          console.log("error")
+          reject(error);
+        }
+      );
+    }
+    );
+  
 }
+
+}
+
+

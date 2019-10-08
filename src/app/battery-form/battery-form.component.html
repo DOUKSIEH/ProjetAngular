@@ -1,0 +1,46 @@
+<div class="jumbotron mx-4 my-5">
+    <div class="container">
+            <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h2>Enregistrer une nouvelle batterie</h2>
+                        <form [formGroup]="batForm" (ngSubmit)="onSaveBat()">
+                                <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name"
+                                        class="form-control" formControlName="name">
+                                </div>
+                                <div class="form-group">
+                                <label for="capacite">Capacite</label>
+                                <input type="text" id="capacite"
+                                        class="form-control" formControlName="capacite">
+                                </div>
+                                <div class="form-group">
+                                        <label for="tension">Tension</label>
+                                        <input type="text" id="tension"
+                                        class="form-control" formControlName="tension">
+                                </div>
+                                <div class="form-group">
+                                        <label for="dimension">Dimension</label>
+                                        <input type="text" id="dimension"
+                                        class="form-control" formControlName="dimension">
+                                </div>
+                                <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <input type="text" id="description"
+                                        class="form-control" formControlName="description">
+                                </div>
+                                <div class="form-group">
+                                        <label for="price">Prix</label>
+                                        <input type="text" id="price"
+                                        class="form-control" formControlName="price">
+                                </div>
+                        
+                                <button class="btn btn-success" [disabled]="batForm.invalid"
+                                        type="submit">Enregistrer
+                                </button>
+                        
+                        </form>
+                    </div>
+                </div>
+    </div>
+</div>

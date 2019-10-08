@@ -2,12 +2,10 @@
 
 
 <div class="container">
-        <h1>Détails ...</h1>
+        <h1 style="color:blueviolet">La batterie de réference n° {{batteri.id}} </h1>
         <div class="jumbotron">
                 <dl class="row">
-                        <dt class="col-sm-3">Réference</dt>
-                        <dd class="col-sm-9">{{batteri.id}}</dd>
-                        <dt class="col-sm-3">Nom</dt>
+                       <dt class="col-sm-3">Nom</dt>
                         <dd class="col-sm-9">{{batteri.name}}</dd>
                         <dt class="col-sm-3">Capacité</dt>
                         <dd class="col-sm-9">{{batteri.capacite}}</dd>
@@ -21,5 +19,6 @@
                         <dd class="col-sm-9">{{batteri.price}}</dd>
                         
                 </dl>
+                <button class="btn btn-primary" (click)="onBack()">Retour</button>
         </div>
 </div>

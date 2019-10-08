@@ -26,7 +26,7 @@ export const Batteries: Battery[] = [
         "tension": "10.8V",
         "dimension":"4.7x7.5x4.2cm",
         "description": "Voluptate mollit consectetur pariatur labore. Quis amet quis minim nulla voluptate amet nisi. Ut sint veniam magna aute velit minim laborum eiusmod mollit dolor laborum. Minim Lorem Lorem pariatur adipisicing laborum tempor consequat est officia proident. Qui consequat duis ipsum minim Lorem cillum in excepteur.\r\n",
-        "price": 114
+        "price": 160
     },
     {
         "id": "4",
@@ -39,12 +39,12 @@ export const Batteries: Battery[] = [
     },
     {
         "id": "5",
-        "name": "ENERGY SAMW12DWH",
-        "capacite": "4400 mAh",
+        "name": "ENERGY SAMW",
+        "capacite": "4500 mAh",
         "tension": "10.8V",
         "dimension":"20.4x4.95x2.02cm",
         "description": "Voluptate mollit consectetur pariatur labore. Quis amet quis minim nulla voluptate amet nisi. Ut sint veniam magna aute velit minim laborum eiusmod mollit dolor laborum. Minim Lorem Lorem pariatur adipisicing laborum tempor consequat est officia proident. Qui consequat duis ipsum minim Lorem cillum in excepteur.\r\n",
-        "price": 50
+        "price": 160
     },
     {
         "id": "6",
@@ -53,7 +53,7 @@ export const Batteries: Battery[] = [
         "tension": "10.8V",
         "dimension":"20.4x4.95x2.02cm",
         "description": "Voluptate mollit consectetur pariatur labore. Quis amet quis minim nulla voluptate amet nisi. Ut sint veniam magna aute velit minim laborum eiusmod mollit dolor laborum. Minim Lorem Lorem pariatur adipisicing laborum tempor consequat est officia proident. Qui consequat duis ipsum minim Lorem cillum in excepteur.\r\n",
-        "price": 50
+        "price": 150
     }
 ];
 

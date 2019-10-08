@@ -1,8 +1,9 @@
-import { Battery } from '../battery';
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BatterieService } from '../services/batterie.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Batt } from '../models/battery.model';
 
 @Component({
   selector: 'app-battery-list',
@@ -11,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class BatteryListComponent implements OnInit , OnDestroy{
   
-  batteris: Battery[];
+  batteris: Batt[];
   batteriesSubscription: Subscription;
 
 
@@ -21,27 +22,33 @@ export class BatteryListComponent implements OnInit , OnDestroy{
 
     this.batteriesSubscription = this.batService.batsSubject.subscribe(
  
-      (bat: Battery[]) => {
+      (bat: Batt[]) => {
         this.batteris = bat;
       }
     );
-    this.batService.emitBooks();
+    this.batService.getBats();
+    this.batService.emitBats();
   }
 
   onNewBat() {
-    this.router.navigate(['/batteries', 'new']);
+    if(this.router.navigate(['admin', 'new'])){
+      console.log('ca marche')
+    }
+    else{
+      console.log('error')
+    }
   }
 
-  onDeleteBat(bat: Battery) {
+  onDeleteBat(bat: Batt) {
     this.batService.removeBat(bat);
   }
 
   onViewBat(id: number) {
-    this.router.navigate(['/batteries', 'view', id]);
+    this.router.navigate(['/admin', id]);
   }
 
   ngOnDestroy(): void {
-    throw new Error("Method not implemented.");
+    //throw new Error("Method not implemented.");
   }
 
 }

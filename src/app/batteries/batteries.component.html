@@ -4,8 +4,7 @@
         <div class="row">
          <div class="col-6" *ngFor="let album of batteris">
             <div class="card my-3" >
-                        
-                    
+                                           
                             <div class="card-header">
                               <!-- permet d'afficher l'index -->
                     
@@ -21,8 +20,10 @@
                               <p class="card-text">{{album.description | slice:0:29 }}...</p>
                         
                        
-                                <a class="btn btn-success btn-lg"  routerLink="/battery/{{album.id}}" role="button">Details</a>
-                            </div>
+                                <a class="btn btn-success btn-lg"  routerLink="/batteries/{{album.id}}" role="button">Details</a>
+                                <a class="btn btn-info btn-lg mx-2"  routerLink="/" role="button">Commander</a>
+                          
+                              </div>
                     </div>
             </div>
         </div>
