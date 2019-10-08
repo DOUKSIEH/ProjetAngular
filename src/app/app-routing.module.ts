@@ -8,12 +8,14 @@ import { BatteryDetailsComponent } from './battery-details/battery-details.compo
 import { BatteryFormComponent } from './battery-form/battery-form.component';
 import { BatteryListComponent } from './battery-list/battery-list.component';
 import { BatterySingleComponent } from './battery-single/battery-single.component';
+import { BatteryUpdateComponent } from './battery-update/battery-update.component';
 
 
  const routes: Routes = [
    { path: 'signup', component: SignupComponent },
    { path: 'login', component: LoginComponent },
    { path: 'batteries', component: BatteriesComponent },
+   { path: 'admin/:id/edit', component: BatteryUpdateComponent , canActivate: [AuthGuardService]},
    { path: 'batteries/:id', component: BatteryDetailsComponent },
    { path: 'admin/new', component: BatteryFormComponent , canActivate: [AuthGuardService]},
    { path: 'admin/:id', component: BatterySingleComponent , canActivate: [AuthGuardService]},

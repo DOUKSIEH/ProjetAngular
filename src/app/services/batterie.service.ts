@@ -16,7 +16,7 @@ export class BatterieService {
     constructor() {
       this.getBats();
   }
-    emitBats() {
+  emitBats() {
       this.batsSubject.next(this.batteris);
     }
    //
@@ -31,6 +31,7 @@ export class BatterieService {
           }
         );
     }
+
   
     getSingleBat(id: number) {
       return new Promise(
@@ -51,7 +52,11 @@ export class BatterieService {
       this.saveBats();
       this.emitBats();
     }
-  
+    updateBat(id: number, bat: Batt) {
+      this.batteris.splice(id, 1, bat); 
+      this.saveBats();
+      this.emitBats();
+    }
     removeBat(bat: Batt) {
       const batIndexToRemove = this.batteris.findIndex(
         (battEl) => {

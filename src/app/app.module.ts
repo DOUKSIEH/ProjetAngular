@@ -16,6 +16,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { BatteryListComponent } from './battery-list/battery-list.component';
 import { BatterySingleComponent } from './battery-single/battery-single.component';
 import { BatteryFormComponent } from './battery-form/battery-form.component';
+import { BatteryUpdateComponent } from './battery-update/battery-update.component';
 
 // const BatRoutes: Routes = [
 //   {
@@ -57,6 +58,7 @@ import { BatteryFormComponent } from './battery-form/battery-form.component';
     BatteryListComponent,
     BatterySingleComponent,
     BatteryFormComponent,
+    BatteryUpdateComponent,
     
     
   ],

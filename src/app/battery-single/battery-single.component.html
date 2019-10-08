@@ -3,6 +3,7 @@
                 <h1>Batterie n° {{id}}</h1>
                 <div class="jumbotron">
                         <dl class="row">
+                                
                                <dt class="col-sm-3">Capacité</dt>
                                 <dd class="col-sm-9">{{bat.capacite}}</dd>
                                 <dt class="col-sm-3">Tension</dt>
@@ -16,7 +17,8 @@
                                 
                         </dl>
                         <button class="btn btn-primary mx-2" (click)="onBack()">Retour</button>
-                        
+                        <button class="btn btn-info mx-5 my-3" routerLink="/admin/{{id}}/edit">Editer</button>
+                       
                 </div>
 
 

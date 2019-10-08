@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <div class="container">
+            <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                      <h2>Modifier un livre</h2>
+                      <form [formGroup]="updateBatForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name"
+                                           class="form-control" formControlName="name">
+                        </div>
+                        <div class="form-group">
+                          <label for="author">Capacite</label>
+                          <input type="text" id="author"
+                                 class="form-control" formControlName="capacite">
+                        </div>
+                        <div class="form-group">
+                                <label for="tension">tension</label>
+                                <input type="text" id="tension"
+                                       class="form-control" formControlName="tension">
+                      </div>
+                      <div class="form-group">
+                            <label for="dim">Dimension</label>
+                            <input type="text" id="dim"
+                                   class="form-control" formControlName="dimension">
+                      </div>
+                      <div class="form-group">
+                            <label for="desc">description</label>
+                            <input type="text" id="desc"
+                                   class="form-control" formControlName="description" >
+                      </div>
+                      <div class="form-group">
+                            <label for="price">Prix</label>
+                            <input type="text" id="price"
+                                   class="form-control" formControlName="price">
+                      </div>
+                      
+                        <button class="btn btn-success" routerLink="/admin" [disabled]="updateBatForm.invalid"
+                                type="submit">Enregistrer
+                        </button>
+                  
+                      </form>
+                    </div>
+                  </div>
+    </div>
+</div>
